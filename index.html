@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BMI</title>
+</head>
+<body>
+    <h1>BMI Calculator</h1>
+    <form onsubmit="CalculateBMI();return false;">
+        <input type="step" name="weight" id="weight" placeholder="Enter weight(kg)"><br><br>
+       <input type="step" name="height" id="height" placeholder="Enter height(m)"><br><br>
+       <button type="submit">calculate</button>
+       <p id="BMIResult"></p>
+       <script>
+        function CalculateBMI() {
+            //DOM Reference
+          const weightRef=document.querySelector("#weight");
+          const heightRef=document.querySelector("#height");
+          //input value
+          let weight=weightRef.value;
+          let height=heightRef.value;
+          //type conversion
+          weight=Number(weight);
+          height=Number(height);
+          // positve
+          
+          const BMI=weight/(height*height)
+          console.log("BMI:",BMI);
+          
+         //BMI Result
+          const resultDivRef=document.querySelector("#BMIResult");
+          resultDivRef.innerText="BMI"+BMI.toFixed(2);
+          
+        }
+       </script>
+        
+    </form>
+</body>
+</html>
